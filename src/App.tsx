@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { useEffect, useState } from "react";
+import About from "./components/About";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +30,7 @@ function App() {
         >
           <Header />
           <Hero />
+          <About />
         </motion.div>
       )}
     </AnimatePresence>
