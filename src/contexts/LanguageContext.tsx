@@ -14,7 +14,8 @@ const translations = {
     'hero.cta': 'Ver Proyectos',
     'about.title': 'Sobre Mí',
     'about.description':
-      'Soy un desarrollador front-end apasionado por crear interfaces web modernas, responsivas y accesibles. Me especializo en React, TypeScript y diseño UI/UX.',
+      'Soy un desarrollador front-end apasionado por crear interfaces web modernas, responsivas y accesibles. Me especializo en React y TypeScript.',
+    'about.subDescription':'Con experiencia en desarrollo web moderno, me enfoco en crear productos digitales que no solo se ven bien, sino que también ofrecen una experiencia excepcional al usuario.',
     'about.skills': 'Habilidades',
     'projects.title': 'Proyectos Destacados',
     'projects.viewDemo': 'Ver Demo',
@@ -33,7 +34,8 @@ const translations = {
     'hero.cta': 'View Projects',
     'about.title': 'About Me',
     'about.description':
-      'I am a front-end developer passionate about creating modern, responsive, and accessible web interfaces. I specialize in React, TypeScript, and UI/UX design.',
+      'I am a front-end developer passionate about creating modern, responsive, and accessible web interfaces. I specialize in React and TypeScript.',
+    'about.subDescription':'With experience in modern web development, I focus on creating digital products that not only look great but also deliver an exceptional user experience.',
     'about.skills': 'Skills',
     'projects.title': 'Featured Projects',
     'projects.viewDemo': 'View Demo',
