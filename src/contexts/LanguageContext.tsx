@@ -1,53 +1,8 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { TranslationKey, translations } from "../utils/translations";
 
-type Language = 'es' | 'en';
 
-// Todas las traducciones
-const translations = {
-  es: {
-    'nav.about': 'Sobre Mí',
-    'nav.projects': 'Proyectos',
-    'nav.contact': 'Contacto',
-    'hero.greeting': 'Hola, soy',
-    'hero.title': 'Desarrollador Front-End',
-    'hero.subtitle': 'Creando experiencias digitales innovadoras',
-    'hero.cta': 'Ver Proyectos',
-    'about.title': 'Sobre Mí',
-    'about.description':
-      'Soy un desarrollador front-end apasionado por crear interfaces web modernas, responsivas y accesibles. Me especializo en React y TypeScript.',
-    'about.subDescription':'Con experiencia en desarrollo web moderno, me enfoco en crear productos digitales que no solo se ven bien, sino que también ofrecen una experiencia excepcional al usuario.',
-    'about.skills': 'Habilidades',
-    'projects.title': 'Proyectos Destacados',
-    'projects.viewDemo': 'Ver Demo',
-    'projects.viewCode': 'Ver Código',
-    'contact.title': 'Conectemos',
-    'contact.description': 'Estoy disponible para nuevos proyectos y colaboraciones',
-    'footer.rights': 'Todos los derechos reservados',
-  },
-  en: {
-    'nav.about': 'About',
-    'nav.projects': 'Projects',
-    'nav.contact': 'Contact',
-    'hero.greeting': 'Hi, I am',
-    'hero.title': 'Front-End Developer',
-    'hero.subtitle': 'Creating innovative digital experiences',
-    'hero.cta': 'View Projects',
-    'about.title': 'About Me',
-    'about.description':
-      'I am a front-end developer passionate about creating modern, responsive, and accessible web interfaces. I specialize in React and TypeScript.',
-    'about.subDescription':'With experience in modern web development, I focus on creating digital products that not only look great but also deliver an exceptional user experience.',
-    'about.skills': 'Skills',
-    'projects.title': 'Featured Projects',
-    'projects.viewDemo': 'View Demo',
-    'projects.viewCode': 'View Code',
-    'contact.title': "Let's Connect",
-    'contact.description': "I'm available for new projects and collaborations",
-    'footer.rights': 'All rights reserved',
-  },
-};
-
-// 🔥 Esto crea autocompletado para las keys de traducción
-export type TranslationKey = keyof typeof translations['es'];
+type Language = "es" | "en";
 
 interface LanguageContextType {
   language: Language;
@@ -58,25 +13,21 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  // 🔥 Cargar idioma desde localStorage al iniciar
   const [language, setLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem('lang') as Language;
-    return saved || 'es';
+    const saved = localStorage.getItem("lang") as Language | null;
+    return saved ?? "es";
   });
 
-  // 🔥 Guardar idioma en el storage cada vez que cambie
   useEffect(() => {
-    localStorage.setItem('lang', language);
+    localStorage.setItem("lang", language);
   }, [language]);
 
-  // Toggle entre ES ↔ EN
   const toggleLanguage = () => {
-    setLanguage(prev => (prev === 'es' ? 'en' : 'es'));
+    setLanguage(prev => (prev === "es" ? "en" : "es"));
   };
 
-  // Función de traducción con autocompletado entero
   const t = (key: TranslationKey): string => {
-    return translations[language][key] || key;
+    return translations[language][key] ?? key;
   };
 
   return (
@@ -88,6 +39,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
 export function useLanguage() {
   const context = useContext(LanguageContext);
-  if (!context) throw new Error('useLanguage must be used within LanguageProvider');
+  if (!context) {
+    throw new Error("useLanguage must be used within LanguageProvider");
+  }
   return context;
 }
