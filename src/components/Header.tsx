@@ -6,6 +6,7 @@ export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const { language, toggleLanguage, t } = useLanguage();
 
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -23,10 +24,15 @@ export default function Header() {
             className="sm:text-sm md:text-md lg:text-lg xl:text-2xl text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-2xl">
             {t("nav.about")}
           </button>
-					<button className=" sm:text-sm md:text-md lg:text-lg xl:text-2xl text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-2xl">
+          <button
+            onClick={() => scrollToSection("skills")}
+            className="sm:text-sm md:text-md lg:text-lg xl:text-2xl text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-2xl mx-10">
+            {t("nav.skill")}
+          </button>
+					<button onClick={() => scrollToSection("projects")} className=" sm:text-sm md:text-md lg:text-lg xl:text-2xl text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-2xl mr-10">
 						{t('nav.projects')}
 					</button>
-					<button className=" sm:text-sm md:text-md lg:text-lg xl:text-2xl text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-2xl">
+					<button onClick={() => scrollToSection("contact")} className=" sm:text-sm md:text-md lg:text-lg xl:text-2xl text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-2xl">
 						{t('nav.contact')}
 					</button>
 					<div>
