@@ -16,7 +16,7 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gray-200 dark:bg-gray-800 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="container mx-auto px-6 py-20 relative z-10">
+      <div className="container mx-auto mt-5 px-6 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in-up">
             <p className="text-lg md:text-xl lg:text-4xl text-gray-600 dark:text-gray-400 mb-4">
