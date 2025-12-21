@@ -1,14 +1,33 @@
 import { useLanguage } from "../contexts/LanguageContext";
-import { Code2, Hexagon, Wrench, Sparkles } from 'lucide-react';
+import { Code2, Hexagon, Wrench, Sparkles } from "lucide-react";
+import { TranslationKey } from "../utils/translations";
+
+type Skill = {
+  icon: React.ElementType;
+  name: TranslationKey;
+  color: string;
+};
 
 export default function About() {
   const { t } = useLanguage();
 
-  const skills = [
-    { icon: Code2, name: 'Front End', color: 'from-blue-500 to-cyan-500' },
-    { icon: Hexagon, name: 'Back End', color: 'from-purple-500 to-pink-500' },
-    { icon: Wrench, name: 'Library', color: 'from-orange-500 to-red-500' },
-    { icon: Sparkles, name: 'Animations', color: 'from-green-500 to-emerald-500' },
+  const skills: Skill[] = [
+    { icon: Code2, name: "about.frontend", color: "from-blue-500 to-cyan-500" },
+    {
+      icon: Hexagon,
+      name: "about.backend",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: Wrench,
+      name: "about.library",
+      color: "from-orange-500 to-red-500",
+    },
+    {
+      icon: Sparkles,
+      name: "about.animations",
+      color: "from-green-500 to-emerald-500",
+    },
   ];
 
   return (
@@ -38,7 +57,9 @@ export default function About() {
                   className="group p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:scale-105 transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-gray-200 dark:hover:border-gray-700"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className={`w-12 h-12 bg-linear-to-br ${skill.color} rounded-lg flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform`}>
+                  <div
+                    className={`w-12 h-12 bg-linear-to-br ${skill.color} rounded-lg flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform`}
+                  >
                     <skill.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">
@@ -46,7 +67,6 @@ export default function About() {
                   </h3>
                 </div>
               ))}
-
             </div>
           </div>
         </div>
