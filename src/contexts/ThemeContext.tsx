@@ -13,10 +13,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
     const saved = localStorage.getItem('theme') as Theme | null;
 
-    // 🔥 Si hay un tema guardado → úsalo
+    
     if (saved) return saved;
 
-    // 🔥 Si no hay nada guardado → que inicie en oscuro
+    
     return 'dark';
   });
 
