@@ -4,6 +4,10 @@ import Hero from "./components/Hero";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { useEffect, useState } from "react";
 import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,6 +35,10 @@ function App() {
           <Header />
           <Hero />
           <About />
+          <Skills />
+          <Projects />
+          <Contact />
+          <Footer />
         </motion.div>
       )}
     </AnimatePresence>
