@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" fill="none">
+  <!--
+    Minimal WSL monogram (transparent background)
+    Color = currentColor (so you can control it with Tailwind classes)
+  -->
+  <g stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <!-- W (left) -->
+    <path d="M28 62 L50 160 L78 98 L106 160 L128 62"></path>
+
+    <!-- S (center) - slightly in front, interlocks visually -->
+    <path d="M150 78
+             C150 60 132 56 116 56
+             C96 56 86 66 86 78
+             C86 92 98 98 116 104
+             C140 112 150 120 150 138
+             C150 158 130 166 112 166
+             C90 166 76 156 76 140"></path>
+
+    <!-- L (right) -->
+    <path d="M176 58 L176 162 L204 162"></path>
+  </g>
+</svg>
