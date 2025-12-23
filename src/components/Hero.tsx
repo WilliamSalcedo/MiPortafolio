@@ -1,5 +1,6 @@
 import { useLanguage } from "../contexts/LanguageContext";
 import { ChevronDown } from "lucide-react";
+import avatar from "../assets/avatarWSL.png";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -9,7 +10,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-linear-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pb-24 bg-linear-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-300 dark:bg-gray-700 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-xl opacity-70 animate-blob"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-400 dark:bg-gray-600 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -18,7 +19,15 @@ export default function Hero() {
 
       <div className="container mx-auto mt-5 px-6 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="animate-fade-in-up">
+          <div className="animate-fade-in-up flex flex-col items-center">
+
+            <div className="mb-6">
+              <img
+                src={avatar}
+                alt="William Salcedo"
+                className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-amber-50 dark:border-gray-700 shadow-lg"
+              />
+            </div>
             <p className="text-lg md:text-xl lg:text-4xl text-gray-600 dark:text-gray-400 mb-4">
               {t("hero.greeting")}
             </p>
@@ -41,7 +50,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-8 md:bottom-30 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8  left-1/2 transform -translate-x-1/2 animate-bounce">
         <ChevronDown className="w-8 h-8 text-gray-400 dark:text-gray-600" />
       </div>
     </section>
