@@ -27,8 +27,8 @@ function App() {
       ) : (
         <motion.div
           key="page"
-          className="min-h-screen bg-slate-950"
-          initial={{ opacity: 1, y: 20 }}
+          className="min-h-screen bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors"
+          initial={{ opacity: 0.95, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >

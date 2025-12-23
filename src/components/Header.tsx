@@ -13,7 +13,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white/80 dark:bg-blue-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors w-full h-25">
+    <header className="sticky top-0 z-50 bg-white/80 dark:bg-blue-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors w-full h-15  ">
       <div className="flex justify-between mx-10 items-center h-full">
         <div className="text-sm md:text-xl lg:text-4xl xl:text-3xl font-bold bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
           Portafolio
@@ -24,6 +24,7 @@ export default function Header() {
             className="sm:text-sm md:text-md lg:text-lg xl:text-2xl text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-2xl">
             {t("nav.about")}
           </button>
+          
           <button
             onClick={() => scrollToSection("skills")}
             className="sm:text-sm md:text-md lg:text-lg xl:text-2xl text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-2xl mx-10">
@@ -56,8 +57,8 @@ export default function Header() {
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               aria-label="Toggle theme"
             >
-              {theme === 'light' ? (
-                <Moon className="w-5 h-5 text-gray-700" />
+              {theme === 'dark' ? (
+                <Moon className="w-5 h-5 text-gray-400" />
               ) : (
                 <Sun className="w-5 h-5 text-gray-300" />
               )}
