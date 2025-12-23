@@ -12,9 +12,9 @@ export const translations = {
 
         "about.title": "Sobre Mí",
         "about.description":
-            "Soy un desarrollador front-end apasionado por crear interfaces web modernas, responsivas y accesibles. Me especializo en React y TypeScript.",
+            "Soy desarrollador Front-end especializado en React y TypeScript, enfocado en crear interfaces web modernas, responsivas y accesibles. Trabajo con buenas prácticas y componentes reutilizables para desarrollar aplicaciones escalables, mantenibles y centradas en el usuario.",
         "about.subDescription":
-            "Con experiencia en desarrollo web moderno, me enfoco en crear productos digitales que no solo se ven bien, sino que también ofrecen una experiencia excepcional al usuario.",
+            "Me encuentro en constante aprendizaje, explorando nuevas herramientas y tendencias del desarrollo web moderno. Busco formar parte de equipos donde pueda aportar, crecer profesionalmente y participar en la creación de productos digitales con impacto positivo.",
         "about.frontend": "Front End",
         "about.backend": "Back End",
         "about.library": "Librerías",
@@ -41,9 +41,9 @@ export const translations = {
         "hero.cta": "View Projects",
         "about.title": "About Me",
         "about.description":
-            "I am a front-end developer passionate about creating modern, responsive, and accessible web interfaces. I specialize in React and TypeScript.",
+            "I am a Front-end Developer specialized in React and TypeScript, focused on building modern, responsive, and accessible web interfaces. I follow best practices and use reusable components to develop scalable, maintainable, and user-centered applications.",
         "about.subDescription":
-            "With experience in modern web development, I focus on creating digital products that not only look great but also deliver an exceptional user experience.",
+            "I am constantly learning, exploring new tools and trends in modern web development. I am looking to be part of teams where I can contribute, grow professionally, and help build digital products with a positive impact.",
         "about.frontend": "Front End",
         "about.backend": "Back End",
         "about.library": "Libraries",
