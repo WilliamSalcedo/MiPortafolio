@@ -4,6 +4,7 @@ import ghostPlay from "../assets/ghostPlay.png";
 import verly from "../assets/verlyOptical.png";
 import womenLogo from "../assets/womenLogo.png";
 import GithubIcon from "./icons/GitHub";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const { t, language } = useLanguage();
@@ -45,70 +46,79 @@ export default function Projects() {
   ];
 
   return (
-    <div id="projects" className="container mx-auto px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-5 text-gray-900 dark:text-white mt-15">
-          {t("projects.title")}
-        </h2>
-        <div className="w-20 h-1 bg-blue-600 dark:bg-blue-500 mx-auto mb-20" />
+    <motion.section
+      id="projects"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.2 }}
 
-        <div className="grid md:grid-cols-2 gap-8 mb-15">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-            >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-4">
-                  <a
-                    href={project.demo}
-                    target="blank"
-                    className="p-3 bg-white text-gray-900 rounded-full hover:scale-110 transition-transform"
-                    aria-label="View demo"
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={project.code}
-                    target="blank"
-                    className="p-3 bg-white text-gray-900 rounded-full hover:scale-110 transition-transform"
-                    aria-label="View code"
-                  >
-                    <GithubIcon className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
+    >
+      <div id="projects" className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-5 text-gray-900 dark:text-white mt-15">
+            {t("projects.title")}
+          </h2>
+          <div className="w-20 h-1 bg-blue-600 dark:bg-blue-500 mx-auto mb-20" />
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  {language === "es"
-                    ? project.description
-                    : project.descriptionEn}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full"
+          <div className="grid md:grid-cols-2 gap-8 mb-15">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-gray-900/80 to-transparent opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-4">
+                    <a
+                      href={project.demo}
+                      target="blank"
+                      className="p-3 bg-white text-gray-900 rounded-full hover:scale-110 transition-transform"
+                      aria-label="View demo"
                     >
-                      {tag}
-                    </span>
-                  ))}
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                    <a
+                      href={project.code}
+                      target="blank"
+                      className="p-3 bg-white text-gray-900 rounded-full hover:scale-110 transition-transform"
+                      aria-label="View code"
+                    >
+                      <GithubIcon className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4">
+                    {language === "es"
+                      ? project.description
+                      : project.descriptionEn}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </motion.section>
   );
 }
