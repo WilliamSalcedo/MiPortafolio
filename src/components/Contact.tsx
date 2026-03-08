@@ -3,6 +3,7 @@ import { Mail} from 'lucide-react';
 import GithubIcon from "./icons/GitHub";
 import whatsappIcon from "./icons/Whatsapp";
 import linkedinIcon from "./icons/Linkedin";
+import { motion } from "framer-motion";
 
 
 export default function Contact() {
@@ -17,7 +18,15 @@ export default function Contact() {
 
 
   return (
-    <section
+
+    <motion.section
+    id="contact"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+<section
       id="contact"
       className="py-20 bg-white dark:bg-gray-900 transition-colors"
     >
@@ -55,5 +64,7 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    </motion.section>
+    
   );
 }
