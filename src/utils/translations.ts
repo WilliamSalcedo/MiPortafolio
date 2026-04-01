@@ -6,8 +6,8 @@ export const translations = {
         "nav.skill": "Habilidades",
 
         "hero.greeting": "Hola, soy",
-        "hero.title": "Desarrollador Front-End",
-        "hero.subtitle": "Creando experiencias digitales innovadoras",
+        "hero.title": "Frontend Developer Jr especializado en React",
+        "hero.subtitle": "Construyo interfaces modernas, rápidas y responsivas, enfocadas en la experiencia de usuario y conectadas a APIs reales.",
         "hero.cta": "Ver Proyectos",
 
         "about.title": "Sobre Mí",
@@ -36,8 +36,8 @@ export const translations = {
         "nav.contact": "Contact",
         "nav.skill": "Skills",
         "hero.greeting": "Hi, I am",
-        "hero.title": "Front-End Developer",
-        "hero.subtitle": "Creating innovative digital experiences",
+        "hero.title": "Junior Frontend Developer | React",
+        "hero.subtitle": "I develop modern, high-performance, and responsive interfaces, focused on delivering great user experiences and integrating with real-world APIs.",
         "hero.cta": "View Projects",
         "about.title": "About Me",
         "about.description":
