@@ -3,6 +3,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 import ghostPlay from "../assets/ghostPlay.png";
 import verly from "../assets/verlyOptical.png";
 import womenLogo from "../assets/womenLogo.png";
+import popUniverse from '../assets/horizontal_ink.png'
 import GithubIcon from "./icons/GitHub";
 import { motion } from "framer-motion";
 
@@ -43,6 +44,17 @@ export default function Projects() {
       demo: "https://thewomenwhomadeus.com/",
       code: "https://github.com/WilliamSalcedo/the-women-who-made-us.git",
     },
+    {
+      title: "PopUniverseCo - E-commerce",
+      description:
+        "Tienda de figuras coleccionables (Funko Pops, anime, cómics, videojuegos y películas) con infraestructura real en AWS y despliegue en producción.",
+      descriptionEn:
+        "e-commerce store for collectible figures (Funko Pops, anime, comics, video games, and movies) built with real AWS infrastructure and deployed to production.",
+      image: popUniverse,
+      tags: ["React", "Zustand", "AWS", "Node.js", "Tailwind", "PostgreSQL"],
+      demo: "https://thewomenwhomadeus.com/",
+      code: "https://github.com/WilliamSalcedo/the-women-who-made-us.git",
+    },
   ];
 
   return (
@@ -52,7 +64,6 @@ export default function Projects() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true, amount: 0.2 }}
-
     >
       <div id="projects" className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
@@ -71,7 +82,7 @@ export default function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 bg-white"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-gray-900/80 to-transparent opacity-100 md:opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-4">
                     <a
